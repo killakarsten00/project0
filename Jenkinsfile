@@ -20,17 +20,17 @@ pipeline {
             sh ‘npm install’
          }
       }
-      stage(‘Destroy old App’) {
-         steps {
-             script{
-                try{
-                    sh ‘kill -9 $(lsof -t -i:$PORT)’
-                }catch (all){
-                    echo ‘No Server was already running’
-                }
-             }
-         }
-      }
+    //  stage(‘Destroy old App’) {
+    //     steps {
+    //         script{
+    //            try{
+    //                sh ‘kill -9 $(lsof -t -i:$PORT)’
+    //            }catch (all){
+    //              echo ‘No Server was already running’
+    //            }
+    //         }
+    //     }
+    //  }
       stage(‘Start App!’) {
          steps {
             sh ‘nohup npm run dev &’
