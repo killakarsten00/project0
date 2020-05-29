@@ -21,13 +21,13 @@ pipeline {
          }
       }
 
-     stage(‘Destroy old App’) {
+     stage('Destroy old App') {
         steps {
             script{
                try{
-                   sh ‘kill -9 $(lsof -t -i:$PORT)’
+                   sh 'kill -9 $(lsof -t -i:$PORT)'
                }catch (all){
-                 echo ‘No Server was already running’
+                 echo 'No Server was already running'
                }
             }
         }
