@@ -12,7 +12,7 @@ pipeline {
         }
         stage(‘download’){
             steps{
-                git branch: ‘master’, url: 'https://https://gitlab.com/killakarsten00/project0', credentialsId: '  070cb400-151a-469d-b673-282f3e2b5bc4’
+                git branch: 'master', url: 'https://https://gitlab.com/killakarsten00/project0', credentialsId: '070cb400-151a-469d-b673-282f3e2b5bc4'
             }
         }
       stage(‘Install node modules’) {
