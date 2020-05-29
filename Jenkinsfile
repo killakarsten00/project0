@@ -34,7 +34,10 @@ pipeline {
      }
       stage('Start App!') {
          steps {
-            sh 'nohup node index.js &'
+            script {
+               sh 'nohup node index.js &'
+            }
+            
             //sh ‘npm run dev’
          }
       }
