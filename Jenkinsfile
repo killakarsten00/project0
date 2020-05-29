@@ -1,23 +1,23 @@
 pipeline {
    agent any
     environment{
-        JENKINS_NODE_COOKIE=‘dontkillmeplease’
+        JENKINS_NODE_COOKIE='dontkillmeplease'
         PORT=3000
     }
    stages {
-        stage(‘clean’){
+        stage('clean'){
             steps{
                  cleanWS()
             }
         }
-        stage(‘download’){
+        stage('download'){
             steps{
                 git branch: 'master', url: 'https://https://gitlab.com/killakarsten00/project0', credentialsId: '070cb400-151a-469d-b673-282f3e2b5bc4'
             }
         }
-      stage(‘Install node modules’) {
+      stage('Install node modules') {
          steps {
-            sh ‘npm install’
+            sh 'npm install'
          }
       }
 
@@ -32,9 +32,9 @@ pipeline {
     //         }
     //     }
     //  }
-      stage(‘Start App!’) {
+      stage('Start App!') {
          steps {
-            sh ‘nohup npm run dev &’
+            sh 'nohup npm run dev &'
             //sh ‘npm run dev’
          }
       }
