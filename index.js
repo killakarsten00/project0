@@ -2,7 +2,7 @@ const db = require('./queries')
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
-const port = 5000
+const port = 3000
 
 app.use(bodyParser.json())
 app.use(
@@ -17,7 +17,6 @@ app.get('/', (request, response) => {
 
 app.get('/shoes', db.getShoes)
 app.get('/shoes/:size', db.getShoesById)
-
 app.post('/shoes', db.createShoes)
 app.put('/shoes/:id', db.updateShoes)
 app.delete('/shoes/:id', db.deleteShoes)
